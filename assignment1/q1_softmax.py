@@ -31,10 +31,8 @@ def softmax(x):
     if len(x.shape) > 1:
         # Matrix
         ### YOUR CODE HERE
-        print "sdf", np.max(x, axis = 1)
         x = np.exp(x - np.max(x, axis = 1).reshape(-1,1))
         sum = np.sum(x, axis = 1).reshape(-1, 1)
-        print "sum" , sum
         x = x / sum
        # raise NotImplementedError
         ### END YOUR CODE
