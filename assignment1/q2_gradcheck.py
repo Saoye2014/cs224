@@ -39,11 +39,11 @@ def gradcheck_naive(f, x):
         ### YOUR CODE HERE:
         x1 = x.copy()
         x1[ix] += h
-        rndstate = random.getstate()
+        #rndstate = random.getstate()
         random.setstate(rndstate)
         fx1, newGrad = f(x1)
         x1[ix] -= 2*h
-        rndstate = random.getstate()
+        #rndstate = random.getstate()
         random.setstate(rndstate)
         fx2, newGrad = f(x1)
         numgrad = (fx1 - fx2) / (2 * h)
